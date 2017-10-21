@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animals xmlns="">
+  <Animal>
+    <Name>Lion</Name>
+    <Imgloc>..\images\Lion.jpg</Imgloc>
+    <Color>yellow</Color>
+    <Sound>roars</Sound>
+    <Feature>mane</Feature>
+  </Animal>
+  <Animal>
+    <Name>Elephant</Name>
+    <Imgloc>..\images\Elephant.jpg</Imgloc>
+    <Color>grey</Color>
+    <Sound>trumpets</Sound>
+    <Feature>trunk</Feature>
+  </Animal>
+</Animals>

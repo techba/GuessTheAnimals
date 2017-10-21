@@ -1,0 +1,43 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuessTheAnimals.Views"
+             xmlns:ViewModel="clr-namespace:GuessTheAnimals.ViewModel"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:Model="clr-namespace:GuessTheAnimals.Model" 
+             x:Class="GuessTheAnimals.Views.ChoosetheAnimal"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="400">
+    <UserControl.DataContext>
+        <ViewModel:ChooseAnimalViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="14" FontWeight="Heavy" Foreground="Red" Text="{Binding state.ErrorState, Mode=TwoWay}" />
+        <TextBlock FontSize="18" FontWeight="Bold" Text="{Binding animal.Name, Mode=TwoWay}" />
+        <Label Grid.Row="1"  x:Name="lblQ1" Content="Select the color of chosen Animal ?" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="Auto"/>
+        <StackPanel Grid.Row="2" x:Name="colorPanel" Orientation="Horizontal" Margin="15,0,0,0">
+            <ComboBox x:Name="colorCombo" Width="154" ItemsSource="{Binding colorPanel,Mode=TwoWay}" SelectedItem="{Binding state.SelectedColor,Mode=TwoWay}" />
+        </StackPanel>
+        <Label Grid.Row="3"  x:Name="lblQ2" Content="Select the Sound made by chosen Animal ?" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="Auto"/>
+        <StackPanel Grid.Row="4" x:Name="soundPanel" Orientation="Horizontal" Margin="15,0,0,0">
+            <ComboBox x:Name="soundCombo" Width="155" ItemsSource="{Binding soundPanel,Mode=TwoWay}" SelectedItem="{Binding state.SelectedSound,Mode=TwoWay}" />
+        </StackPanel>
+        <Label Grid.Row="5"  x:Name="lblQ3" Content="Select the uniqueness of chosen Animal ?" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="Auto"/>
+        <StackPanel Grid.Row="6" x:Name="featurePanel" Orientation="Horizontal" Margin="15,0,0,0">
+            <ComboBox x:Name="featureCombo" Width="154" ItemsSource="{Binding featurePanel,Mode=TwoWay}" SelectedItem="{Binding state.SelectedFeature,Mode=TwoWay}" Margin="0,0,0,99"/>
+        </StackPanel>
+        <Button Content="Guess it!" Grid.Row="6" Margin="50,50,257,50" Command="{Binding chooseAnimalCmd}" >
+        </Button>
+    </Grid>
+</UserControl>

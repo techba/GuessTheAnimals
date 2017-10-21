@@ -1,0 +1,30 @@
+﻿<Window x:Class="GuessTheAnimals.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessTheAnimals"
+        xmlns:Views="clr-namespace:GuessTheAnimals.Views"
+        mc:Ignorable="d"
+        Title="Guess the Animals" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Name="stkpnl1" Height="Auto" VerticalAlignment="Top">
+                <Button x:Name="btnHome" Content="Go to Home" Click="btnHome_Click" Margin="53,5,609,5"/>
+                <Button x:Name="btnPlay" Content="Play Game" Click="btnPlay_Click" Margin="53,5,609,5"/>
+                <Button x:Name="btnReady" Content="I am Ready" Click="btnReady_Click" Margin="53,5,609,5"/>
+                <Button x:Name="btnAdd" Content="Add An Animal" Click="btnAdd_Click" Margin="53,5,609,5" />
+            </StackPanel>
+            <Views:ViewAnimals Grid.Row="2" x:Name="ViewAnimalViewControl" Loaded="ViewAnimalViewControl_Loaded" />
+            <Views:AddAnimalView Grid.Row="3" x:Name="AddAnimalViewControl" Loaded="AddAnimalViewControl_Loaded"/>
+            <Views:ChoosetheAnimal Grid.Row="4" x:Name="ChoosetheANimalViewControl" Loaded="ChoosetheANimalViewControl_Loaded" />
+        </Grid>
+    </ScrollViewer>
+</Window>
